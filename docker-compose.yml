@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:14.3
+    container_name: "postgres"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=teste_123
+      - TZ='America/Porto_Velho'
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
